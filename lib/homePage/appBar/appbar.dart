@@ -1,15 +1,26 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, must_be_immutable
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'dart:math';
+
 import 'package:mobile_games_store_ui/colors/colors.dart';
-import 'package:mobile_games_store_ui/redundant/textdesgin.dart';
 import 'package:flutter/material.dart';
 
-class AppBarDesign extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarDesign({super.key});
+class AppBarDesign extends StatefulWidget implements PreferredSizeWidget {
+  Function changeSearch;
+  Function valueFun;
+  Function empty;
+  AppBarDesign(this.changeSearch, this.valueFun, this.empty, {super.key});
 
   @override
+  State<AppBarDesign> createState() => _AppBarDesignState();
+  @override
   Size get preferredSize => Size(0, 100);
+}
+
+class _AppBarDesignState extends State<AppBarDesign> {
+  bool enable = true;
+  TextEditingController textForm = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -20,62 +31,74 @@ class AppBarDesign extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: color2,
-              size: MediaQuery.of(context).size.width * 0.07,
+          Visibility(
+            visible: !enable,
+            child: InkWell(
+              onTap: () {
+                enable = !enable;
+                widget.changeSearch();
+                textForm.text = "";
+                setState(() {});
+              },
+              child: Icon(
+                Icons.arrow_back,
+                color: color2,
+                size: MediaQuery.of(context).size.width * 0.07,
+              ),
             ),
           ),
           SizedBox(
             width: 5,
           ),
-          Container(
-            width: MediaQuery.of(context).size.width > 300
-                ? MediaQuery.of(context).size.width / 1.5
-                : 100,
-            padding: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: color2,
-            ),
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 5,
-                ),
-                Icon(
-                  Icons.search,
-                  color: color1,
-                  size: MediaQuery.of(context).size.width * 0.1,
-                ),
-                Visibility(
-                  visible: MediaQuery.of(context).size.width > 300,
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.04,
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: color2,
+              ),
+              child: TextFormField(
+                readOnly: enable,
+                autofocus: false,
+                onTap: () {
+                  setState(() {
+                    enable = !enable;
+                    widget.changeSearch();
+                  });
+                },
+                onChanged: (value) {
+                  textForm.text.isEmpty ? widget.empty() : {};
+                  widget.valueFun(value);
+                },
+                controller: textForm,
+                cursorColor: color1,
+                decoration: InputDecoration(
+                  focusedBorder: InputBorder.none,
+                  prefixIcon: Icon(
+                    Icons.search_rounded,
+                    size: 28,
+                    color: color1,
+                  ),
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                  hintText: 'Search',
+                  hintStyle: TextStyle(color: color1, fontSize: 17),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
-                Visibility(
-                  visible: MediaQuery.of(context).size.width > 300,
-                  child: TextDesgin(
-                      "Search games",
-                      MediaQuery.of(context).size.width * 0.04,
-                      FontWeight.w500,
-                      color1),
-                ),
-              ],
+              ),
             ),
           ),
           SizedBox(
             width: 10,
           ),
-          Image.asset(
-            'images/game.png',
-            width: MediaQuery.of(context).size.width * 0.09,
-          )
+          Visibility(
+            visible: enable,
+            child: Image.asset(
+              'images/game.png',
+              width: MediaQuery.of(context).size.width * 0.09,
+            ),
+          ),
         ],
       ),
     );

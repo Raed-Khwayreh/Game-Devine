@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../data/data.dart';
-import 'bestforkidsitem.dart';
+import 'verticallistview.dart';
 
 class BestForKids extends StatelessWidget {
   const BestForKids({super.key});
@@ -17,9 +17,11 @@ class BestForKids extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
-          return BestForKidsItem(games
-              .where((element) => element.classification == 'kid')
-              .toList()[index]);
+          return VerticalListview(
+              games
+                  .where((element) => element.classification == 'kid')
+                  .toList()[index],
+              true);
         },
         itemCount:
             games.where((element) => element.classification == 'kid').length,

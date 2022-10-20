@@ -17,7 +17,6 @@ class MostPopulerItem extends StatelessWidget {
           MaterialPageRoute(
               builder: (context) => ThirdPage(
                     game,
-                    0,
                   )),
         );
       },

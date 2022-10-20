@@ -15,8 +15,8 @@ class ComingGame extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => ThirdPage(
-                games.where((element) => element.name == 'Mafia 3').toList()[0],
-                1),
+                games.where((element) => element.name == 'Mafia 3').toList()[0]
+                ),
           ),
         );
       },
