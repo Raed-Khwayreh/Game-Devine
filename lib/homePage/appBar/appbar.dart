@@ -1,16 +1,13 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'dart:math';
-
 import 'package:mobile_games_store_ui/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppBarDesign extends StatefulWidget implements PreferredSizeWidget {
   Function changeSearch;
   Function valueFun;
-  Function empty;
-  AppBarDesign(this.changeSearch, this.valueFun, this.empty, {super.key});
+  AppBarDesign(this.changeSearch, this.valueFun,{super.key});
 
   @override
   State<AppBarDesign> createState() => _AppBarDesignState();
@@ -66,7 +63,6 @@ class _AppBarDesignState extends State<AppBarDesign> {
                   });
                 },
                 onChanged: (value) {
-                  textForm.text.isEmpty ? widget.empty() : {};
                   widget.valueFun(value);
                 },
                 controller: textForm,

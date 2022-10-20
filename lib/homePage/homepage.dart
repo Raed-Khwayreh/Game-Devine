@@ -19,10 +19,6 @@ class _HomePageState extends State<HomePage> {
   List l = [];
   bool search = false;
   String value = "";
-  empty() {
-    l = [];
-    setState(() {});
-  }
 
   changeSearch() {
     search = !search;
@@ -41,7 +37,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarDesign(changeSearch, valueFun,empty),
+      appBar: AppBarDesign(
+        changeSearch,
+        valueFun,
+      ),
       body: search
           ? Container(
               margin: EdgeInsets.symmetric(horizontal: 15),
