@@ -1,0 +1,58 @@
+import 'package:mobile_games_store_ui/models/game.dart';
+
+List<Game> games = [
+  Game(
+    name: 'Mafia 3',
+    image: ['mafia.jpg', 'mafia2.jpg'],
+    rate: 3.4,
+    classification: null,
+    company: "Hangar 13",
+    category: "Action",
+    reviews: 3782,
+  ),
+  Game(
+    name: 'Hitman Sniper 2',
+    image: ['hs.png'],
+    rate: 3.78,
+    classification: 'default',
+    company: "Square Enix LTD",
+    category: "Shooting",
+    reviews: 5230,
+  ),
+  Game(
+    name: 'PUBG',
+    image: ['pubg.png'],
+    rate: 4.4,
+    classification: 'default',
+    company: "Lightspeed & Quantu",
+    category: "Battle royale",
+    reviews: 10548,
+  ),
+  Game(
+    name: 'Asphalt 9 legends',
+    image: ['asp.png'],
+    rate: 4.5,
+    classification: 'default',
+    company: "Gameloft Iberica S.A.U.",
+    category: "Racing",
+    reviews: 8954,
+  ),
+  Game(
+    name: 'Talking Tom',
+    image: ['tom.png'],
+    rate: 4.78,
+    classification: 'kid',
+    company: "Outfit7",
+    category: "Kids' Animation",
+    reviews: 2578,
+  ),
+  Game(
+    name: 'Sonic Forces',
+    image: ['sonic.jpg'],
+    rate: 4.78,
+    classification: 'kid',
+    company: "Hardlight studio",
+    category: "Racing",
+    reviews: 8954,
+  ),
+];
