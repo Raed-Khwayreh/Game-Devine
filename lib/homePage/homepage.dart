@@ -16,7 +16,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List l = [];
+  @override
+  List l = games;
+
   bool search = false;
   String value = "";
 
