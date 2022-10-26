@@ -16,13 +16,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
+  bool search = false;
   List l = games;
 
-  bool search = false;
   String value = "";
 
   changeSearch() {
+    l = games;
     search = !search;
     setState(() {});
   }
