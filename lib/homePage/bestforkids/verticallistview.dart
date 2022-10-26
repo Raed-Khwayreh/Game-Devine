@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
 import 'package:flutter/material.dart';
 import 'package:mobile_games_store_ui/colors/colors.dart';
-import '../../GameDetail/thirdpage.dart';
+import '../../GameDetails/thirdpage.dart';
 import '../../models/game.dart';
 import '../../redundant/ratingbar.dart';
 

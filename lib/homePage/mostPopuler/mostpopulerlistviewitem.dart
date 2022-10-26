@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
 import 'package:mobile_games_store_ui/redundant/ratingbar.dart';
 import 'package:flutter/material.dart';
-import '../../GameDetail/thirdpage.dart';
+import '../../GameDetails/thirdpage.dart';
 import '../../models/game.dart';
 
 class MostPopulerItem extends StatelessWidget {

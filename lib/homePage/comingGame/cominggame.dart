@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../GameDetail/thirdpage.dart';
+import '../../GameDetails/thirdpage.dart';
 import '../../data/data.dart';
 
 class ComingGame extends StatelessWidget {
