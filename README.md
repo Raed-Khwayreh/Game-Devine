@@ -1,16 +1,13 @@
-# mobile_games_store_ui
+# Game Devine
 
-A new Flutter project.
+Mobile app for games store (Just UI)
+## 
+In This project I have used:
 
-## Getting Started
+-Clip path to make curved shape
 
-This project is a starting point for a Flutter application.
+-Carousel Slider
 
-A few resources to get you started if this is your first Flutter project:
+-Rating bar
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img height=350 width=720 src="https://user-images.githubusercontent.com/78206754/209872893-e3640a66-5e2c-475f-ba79-5a4350a66264.jpg"/>
